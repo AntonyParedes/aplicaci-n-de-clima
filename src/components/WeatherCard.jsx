@@ -19,7 +19,7 @@ const WeatherCard = ({ weather, temp }) => {
           />
         </div>
         <article>
-          <h3>weather?.weather[0].description</h3>
+          <h3>{weather?.weather[0].description}</h3>
           <ul>
             <li>
               <span>Wind Speed</span>
