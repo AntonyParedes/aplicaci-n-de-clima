@@ -23,15 +23,15 @@ const WeatherCard = ({ weather, temp }) => {
           <ul>
             <li>
               <span>Wind Speed</span>
-              <span>{weather?.wind.speep}m/s</span>
+              <span>{weather?.wind.speep} m/s</span>
             </li>
             <li>
-              <span>Clouds</span>
+              <span>Clouds </span>
               <span>{weather?.clouds.all}%</span>
             </li>
             <li>
-              <span>Pressure</span>
-              <span>{weather?.main.pressure}hPa</span>
+              <span>Pressure </span>
+              <span>{weather?.main.pressure} hPa</span>
             </li>
           </ul>
         </article>
