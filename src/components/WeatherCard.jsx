@@ -17,7 +17,7 @@ const WeatherCard = ({ weather, temp, setCity, messageError, city }) => {
 
   return (
     <section className="card flex-container">
-      <h1 className="card__title">Weather App</h1>
+      <h1 className="card__title">App del Clima</h1>
       <h2 className="card__country">
         {weather?.name}, {weather?.sys.country}
       </h2>
@@ -44,15 +44,15 @@ const WeatherCard = ({ weather, temp, setCity, messageError, city }) => {
           <h3 className="info__title">{weather?.weather[0].description}</h3>
           <ul className="info__list grid-container">
             <li className="info__item grid-container">
-              <span className="info__label">Wind Speed</span>
+              <span className="info__label">Viento 🌬️</span>
               <span className="info__value">{weather?.wind.speed}m/s</span>
             </li>
             <li className="info__item grid-container">
-              <span className="info__label">Clouds</span>
+              <span className="info__label">Nubes ☁️</span>
               <span className="info__value">{weather?.clouds.all}%</span>
             </li>
             <li className="info__item grid-container">
-              <span className="info__label">Pressure</span>
+              <span className="info__label">Presión:</span>
               <span className="info__value">{weather?.main.pressure}hPa</span>
             </li>
           </ul>
@@ -62,7 +62,7 @@ const WeatherCard = ({ weather, temp, setCity, messageError, city }) => {
         {isCelsius ? `${temp?.celsius}°C` : `${temp?.fahrenheit}°F`}
       </h2>
       <button className="card__btn" onClick={changeDegrees}>
-        Change to {isCelsius ? "°F" : "°C"}
+        Convertir a {isCelsius ? "°F" : "°C"}
       </button>
     </section>
   );
