@@ -74,4 +74,48 @@
         font-size: 1.2rem;
       }
     }
+    
+  }
+  .buscar{
+    position: relative;
+    padding: 5px;
+
+    width: 106px;
+    height: 35px;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #222;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 30px;
+
+    transition: all 0.6s ease;
+    &:hover{
+      width: 240px;
+    }
+
+    focus{
+      width: 240px;
+    }
+    
+  }
+  .icon{
+    position: relative;
+    top: 3px;
+    right:0px;
+
+  
+
+   
+    
+    background: #440080;
+   
+    width: 37px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
   }

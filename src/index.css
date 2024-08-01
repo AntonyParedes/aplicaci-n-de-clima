@@ -37,8 +37,11 @@ html {
     font-family: inherit;
     border: none;
     cursor: pointer;
+    
   }
-}
+  
+  }
+
 /* Reusable Classes  */
 .flex-container {
   display: flex;

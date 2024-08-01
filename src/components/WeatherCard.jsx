@@ -22,8 +22,14 @@ const WeatherCard = ({ weather, temp, setCity, messageError, city }) => {
         {weather?.name}, {weather?.sys.country}
       </h2>
       <form onSubmit={handleSubmit}>
-        <input type="search" placeholder="Search by City" ref={inputSearch} />
-        <button>Search</button>
+        <input
+          className="buscar"
+          type="search"
+          placeholder="Search by City"
+          ref={inputSearch}
+        />
+
+        <button className="fas fa-search icon"></button>
       </form>
       {messageError && <p>{city} doesn't exist ❌</p>}
       <article className="card__body grid-container">
