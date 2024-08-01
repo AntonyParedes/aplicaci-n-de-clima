@@ -62,7 +62,7 @@ function App() {
   };
 
   return (
-    <div style={objStyles} className="app flex-container">
+    <div style={objStyles} className="app flex-container full">
       {isLoading ? (
         <div>
           <div className="loader">
