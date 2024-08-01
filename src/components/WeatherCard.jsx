@@ -31,7 +31,7 @@ const WeatherCard = ({ weather, temp, setCity, messageError, city }) => {
 
         <button className="fas fa-search icon"></button>
       </form>
-      {messageError && <p>{city} doesn't exist ❌</p>}
+      {messageError && <p>'{city}' No existe ❌</p>}
       <article className="card__body grid-container">
         <div className="card__image-container">
           <img

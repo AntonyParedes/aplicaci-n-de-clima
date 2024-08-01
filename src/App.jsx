@@ -65,7 +65,12 @@ function App() {
     <div style={objStyles} className="app flex-container">
       {isLoading ? (
         <div>
-          <h1>Loading...</h1>
+          <div className="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
           {showMessage && <p>Please activate location</p>}
         </div>
       ) : hasError ? (
