@@ -71,12 +71,14 @@ function App() {
             <div></div>
             <div></div>
           </div>
-          {showMessage && <p>Please activate location</p>}
+          {showMessage && <p>Por favor activa la localización</p>}
         </div>
       ) : hasError ? (
-        <h1>
-          To obtain the weather of your city you must accept the permissions
-        </h1>
+        <div className="ubi">
+          <h1 texUbi>
+            Para obtener el clima de tu ciudad debes aceptar los permisos
+          </h1>
+        </div>
       ) : (
         <WeatherCard
           weather={weather}
