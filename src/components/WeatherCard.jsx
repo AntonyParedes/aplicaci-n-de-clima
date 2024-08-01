@@ -1,45 +1,63 @@
 import { useState } from "react";
+import "./styles/WeatherCard.css";
+import { useRef } from "react";
 
-const WeatherCard = ({ weather, temp }) => {
+const WeatherCard = ({ weather, temp, setCity, messageError, city }) => {
   const [isCelsius, setIsCelsius] = useState(true);
   const changeDegrees = () => {
     setIsCelsius(!isCelsius);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setCity(inputSearch.current.value);
+  };
+
+  const inputSearch = useRef();
+
   return (
-    <section>
-      <h1>Wheather App</h1>
-      <h2>
+    <section className="card flex-container">
+      <h1 className="card__title">Weather App</h1>
+      <h2 className="card__country">
         {weather?.name}, {weather?.sys.country}
       </h2>
-      <article>
-        <div>
+      <form onSubmit={handleSubmit}>
+        <input type="search" placeholder="Search by City" ref={inputSearch} />
+        <button>Search</button>
+      </form>
+      {messageError && <p>{city} doesn't exist ❌</p>}
+      <article className="card__body grid-container">
+        <div className="card__image-container">
           <img
+            className="card__image"
             src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`}
             alt={weather?.weather[0].main}
           />
         </div>
-        <article>
-          <h3>{weather?.weather[0].description}</h3>
-          <ul>
-            <li>
-              <span>Wind Speed</span>
-              <span>{weather?.wind.speep} m/s</span>
+        <article className="info grid-container">
+          <h3 className="info__title">{weather?.weather[0].description}</h3>
+          <ul className="info__list grid-container">
+            <li className="info__item grid-container">
+              <span className="info__label">Wind Speed</span>
+              <span className="info__value">{weather?.wind.speed}m/s</span>
             </li>
-            <li>
-              <span>Clouds </span>
-              <span>{weather?.clouds.all}%</span>
+            <li className="info__item grid-container">
+              <span className="info__label">Clouds</span>
+              <span className="info__value">{weather?.clouds.all}%</span>
             </li>
-            <li>
-              <span>Pressure </span>
-              <span>{weather?.main.pressure} hPa</span>
+            <li className="info__item grid-container">
+              <span className="info__label">Pressure</span>
+              <span className="info__value">{weather?.main.pressure}hPa</span>
             </li>
           </ul>
         </article>
-        <h2>{isCelsius ? `${temp?.celsius}°C` : `${temp?.fahrenheit}°F`}</h2>
-        <button onClick={changeDegrees}>
-          Change to {isCelsius ? "°F" : "°C"}
-        </button>
       </article>
+      <h2 className="card__temp">
+        {isCelsius ? `${temp?.celsius}°C` : `${temp?.fahrenheit}°F`}
+      </h2>
+      <button className="card__btn" onClick={changeDegrees}>
+        Change to {isCelsius ? "°F" : "°C"}
+      </button>
     </section>
   );
 };
